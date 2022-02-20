@@ -144,7 +144,7 @@ public class FileEnumerator
 					Log.w( LOGTAG, "Enumeration thread end. : Not a directory." );
 					return;    // ※注）関数を抜ける前にfinallyの処理が実行される。
 				}
-				else if( WinError.ERROR_ACCESS_DENIED == e.getNtStatus() )
+				else if( NtStatus.NT_STATUS_ACCESS_DENIED == e.getNtStatus() )
 				{    // SmbFile#listFiles()の結果「Access denied」
 					message.what = RESULT_FAILED_ACCESS_DENIED;
 					message.obj = null;
